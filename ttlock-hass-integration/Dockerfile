@@ -14,7 +14,10 @@ RUN chmod 755 /app/start.sh
 COPY addon /app
 RUN rm -rf /app/node_modules
 
-RUN cd /app && npm i
+RUN cd /app && \
+    npm install --include=optional && \
+    npm install --save-exact @abandonware/bluetooth-hci-socket@0.5.3-12 && \
+    npm ls @abandonware/bluetooth-hci-socket
 
 # here we should just copy the /app contents to a run image with nodejs and other requirements only
 
