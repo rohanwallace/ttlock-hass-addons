@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/dstarikov/ttlock-hass-addons/tree/master/ttlock-hass-integration",
   "dependencies": {
+    "@abandonware/bluetooth-hci-socket": "0.5.3-12",
     "async-mqtt": "^2.6.1",
     "express": "^4.17.1",
     "ttlock-sdk-js": "^0.3.14",
