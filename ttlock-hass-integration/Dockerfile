@@ -1,5 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ghcr.io/home-assistant/base:latest
 
 ENV LANG C.UTF-8
 
@@ -10,6 +9,8 @@ RUN setcap cap_net_raw+eip $(eval readlink -f $(which node))
 WORKDIR /
 
 COPY start.sh /app/start.sh
+RUN chmod 755 /app/start.sh
+
 COPY addon /app
 RUN rm -rf /app/node_modules
 
